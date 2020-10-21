@@ -6,6 +6,10 @@ stages:
 test-update:
   stage: test
   script:
+    # Add dependencies
+    - apk update
+    - apk add curl
+
     # Prepare script
     - mkdir -p ~/.steam/compatibilitytools.d/
     - chmod a+x ./update-proton-ge
