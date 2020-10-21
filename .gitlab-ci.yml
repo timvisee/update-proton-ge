@@ -7,7 +7,7 @@ test-update:
   stage: test
   script:
     # Add dependencies
-    - apk add curl wget
+    - apk add curl wget tree
 
     # Prepare script
     - mkdir -p ~/.steam/compatibilitytools.d/
@@ -15,3 +15,6 @@ test-update:
 
     # Run to test script
     - ./update-proton-ge
+
+    # Show tree
+    - tree -L 2 ~/.steam/compatibilitytools.d/
