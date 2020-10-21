@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Stop on error
+set -e
+
+REPO=https://github.com/GloriousEggroll/proton-ge-custom
+LATEST_RELEASE_URL=$REPO/releases/latest
+
+# Find latest version tag
+release_url=$(curl -Ls -o /dev/null -w %{url_effective} $LATEST_RELEASE_URL)
+version=${release_url##*/}
+echo Found latest version: $version
+
+# Determine download URL and install path
+download_url=https://github.com/GloriousEggroll/proton-ge-custom/releases/download/$version/Proton-$version.tar.gz
+proton_dir=~/.steam/compatibilitytools.d
+install_dir=$proton_dir/Proton-$version
+download_file=/tmp/Proton-$version.tar.gz
+
+# Exit if already installed
+if [ -d $install_dir ]; then
+    echo Already installed at: $install_dir
+    exit
+fi
+
+echo Downloading...
+wget -q --show-progress $download_url -O $download_file
+
+echo Installing...
+tar -xzf $download_file --directory $proton_dir
+
+echo Cleanup...
+rm $download_file
+
+echo Installation complete
+xdg-open $install_dir
