@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Stop on error
 set -e
@@ -33,4 +33,4 @@ echo Cleanup...
 rm $download_file
 
 echo Installation complete
-xdg-open $install_dir
+xdg-open $install_dir || true
