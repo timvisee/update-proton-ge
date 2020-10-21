@@ -7,8 +7,7 @@ test-update:
   stage: test
   script:
     # Add dependencies
-    - apk update
-    - apk add curl
+    - apk add curl wget
 
     # Prepare script
     - mkdir -p ~/.steam/compatibilitytools.d/
