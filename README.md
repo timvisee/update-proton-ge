@@ -1,3 +1,8 @@
+[![Build status on GitLab CI][gitlab-ci-master-badge]][gitlab-ci-link]
+
+[gitlab-ci-link]: https://gitlab.com/timvisee/update-proton-ge/pipelines
+[gitlab-ci-master-badge]: https://gitlab.com/timvisee/update-proton-ge/badges/master/pipeline.svg
+
 # Update Proton GloriousEggroll script
 A script to update your [Proton GloriousEggroll][proton-ge] installation to the latest
 version, so you don't have to do it yourself.
