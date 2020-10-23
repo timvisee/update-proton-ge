@@ -6,7 +6,7 @@ set -e
 # Constants
 REPO=https://github.com/GloriousEggroll/proton-ge-custom
 LATEST_RELEASE_URL=$REPO/releases/latest
-PROTON_DIR=~/.steam/compatibilitytools.d
+PROTON_DIR=~/.steam/root/compatibilitytools.d
 
 # Find latest version tag
 release_url=$(curl -Ls -o /dev/null -w %{url_effective} $LATEST_RELEASE_URL)
@@ -28,6 +28,7 @@ echo Downloading...
 wget -q --show-progress $download_url -O $download_file
 
 echo Extracting...
+mkdir -p $PROTON_DIR
 tar -xzf $download_file --directory $PROTON_DIR
 
 echo Cleanup...
