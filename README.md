@@ -34,7 +34,7 @@ Then run it to install the latest version of GloriousEggroll's Proton:
 ```
 
 ## License
-This project is released under the GNU GPL-3.0 license.
+This project is released under the MIT license.
 Check out the [LICENSE](LICENSE) file for more information.
 
 [proton-ge]: https://github.com/GloriousEggroll/proton-ge-custom
