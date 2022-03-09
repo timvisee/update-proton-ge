@@ -14,9 +14,9 @@ version=${release_url##*/}
 echo Found latest version: $version
 
 # Determine download URL and install path
-download_url=https://github.com/GloriousEggroll/proton-ge-custom/releases/download/$version/Proton-$version.tar.gz
-install_dir=$PROTON_DIR/Proton-$version
-download_file=/tmp/Proton-$version.tar.gz
+download_url=https://github.com/GloriousEggroll/proton-ge-custom/releases/download/$version/$version.tar.gz
+install_dir=$PROTON_DIR/$version
+download_file=/tmp/$version.tar.gz
 
 # Exit if already installed
 if [ -d $install_dir ]; then
