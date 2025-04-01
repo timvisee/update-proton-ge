@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# From: <https://github.com/timvisee/update-proton-ge>
+
 # Stop on error
 set -e
 
